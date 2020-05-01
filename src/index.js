@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { ModalProvider } from "react-modal-hook";
+import App from "./pages/App";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ModalProvider>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </ModalProvider>,
+  document.getElementById("root")
 );
