@@ -1,18 +1,17 @@
 import React from "react";
 
-import { Button, Wrapper, SortWrapper } from "./header.style";
+import { Button, Wrapper } from "./header.style";
 
-export default function Header({ rangeChange }) {
+export default function Header({ randomList, rangeChange }) {
   return (
     <Wrapper>
-      <Button onClick={() => console.log("Clicked")}>Generate New Array</Button>
-      <Button onClick={rangeChange}>Input your range</Button>
-      <SortWrapper>
-        <Button onClick={() => console.log("Clicked")}>Merge</Button>
-        <Button onClick={() => console.log("Clicked")}>Quick</Button>
-        <Button onClick={() => console.log("Clicked")}>Heap</Button>
-        <Button onClick={() => console.log("Clicked")}>Bubble</Button>
-      </SortWrapper>
+      <Button disabled>Sorting Visualizer</Button>
+      <Button onClick={randomList}>Random List</Button>
+      <Button onClick={rangeChange}>Change Size</Button>
+      <Button>Bubble Sort</Button>
+      <Button>Heap Sort</Button>
+      <Button>Merge Sort</Button>
+      <Button>Quick Sort</Button>
     </Wrapper>
   );
 }

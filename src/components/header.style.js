@@ -2,25 +2,18 @@ import styled from "styled-components";
 
 export const Button = styled.p`
   color: #fff;
-  cursor: pointer;
-  font-size: 12px;
+  cursor: ${(props) => (props.disabled ? "cursor" : "pointer")};
+  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  line-height: 30px;
-
-  &:hover {
-    color: #00ff3b;
-  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-content: center;
-  justify-content: space-evenly;
-  height: 50px;
+  justify-content: space-around;
   width: 100%;
-  background-color: #c314cc;
+  background-color: #be6c2f;
   padding-left: 25px;
   padding-right: 25px;
 `;
