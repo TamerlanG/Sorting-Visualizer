@@ -4,14 +4,22 @@ import styled from "styled-components";
 
 import { Button } from "../components/header.style";
 
-export default function Main({ data }) {
+export default function Main({ currentIndex, data, nextIndex }) {
+  console.log("Main -> nextIndex", nextIndex);
+  console.log("Main -> currentIndex", currentIndex);
   const width = screen.width / data.length;
   return (
     <Container>
       <BlocksContainer>
-        {data.map((size) => (
+        {data.map((size, i) => (
           <>
-            <Bar height={`${size}px`} width={`${width}px`}>
+            <Bar
+              height={`${size}px`}
+              width={`${width}px`}
+              key={i}
+              active={currentIndex === i}
+              style={nextIndex === i ? { backgroundColor: "green" } : null}
+            >
               {data.length < 20 && <Button disabled>{size}</Button>}
             </Bar>
           </>
@@ -53,6 +61,7 @@ const Bar = styled.div`
   justify-content: center;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  background-color: ${(props) => props.color || "#be6c2f"};
+  background-color: ${(props) => (props.active ? "#B50002" : "#be6c2f")};
   margin-right: 2px;
+  ${(props) => props.style}
 `;
